@@ -19,12 +19,8 @@ public partial class SettingsService()
         SerializerContext.Default
     )
 {
-    private ThemeVariant _theme;
-    public ThemeVariant Theme
-    {
-        get => _theme;
-        set => SetProperty(ref _theme, value);
-    }
+    [ObservableProperty]
+    public partial ThemeVariant Theme { get; set; }
 
     [ObservableProperty]
     public partial bool IsAutoUpdateEnabled { get; set; } = true;
